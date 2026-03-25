@@ -62,10 +62,12 @@ This workshop is divided into **6 Sprints**. After you complete the code for eac
 - **Task:** Program a check to see if Yoshi's `y` position is greater than the `canvas.height`. If so, trigger the Game Over state.
 - *Git Check:* `git commit -m "fix: implement pit death logic"`
 
-### Sprint 4: The Head-Butt
-**Goal:** Collision Direction.
-- **Task:** Inside the platform loop, detect if Yoshi is moving **up** (`vY < 0`) and hitting a block. If the block is an "item" type, make it disappear!
-- *Git Check:* `git commit -m "feat: add head-butt block destruction"`
+### Sprint 4: The Solid World (Collisions)
+**Goal:** Make the world feel physical. Right now, Yoshi is a ghost who can walk through walls!
+- **Task 1 (Head-Butt):** If Yoshi hits a block from below, make him bounce down. If it's a `?` block, delete it!
+- **Task 2 (The Walls):** Use Yoshi's velocity (`vX`) to detect if he is hitting the side of a brick. If he is, "push" him back so he can't pass through.
+- **Task 3 (The Floor):** Look at the provided code to see how we "snap" Yoshi to the top of a platform. Can you use that logic for the sides?
+- *Git Check:* `git add .`, `git commit -m "Sprint 4: Solid World"`, `git push`
 
 ### Sprint 5: Stomp or Die
 **Goal:** Complex Physics Logic.
