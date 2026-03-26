@@ -116,32 +116,32 @@ function update() {
       
       /**
        * CHALLENGE 4: THE SOLID WORLD
-       * We've given you the "Floor" logic. Now, you must handle:
-       * 1. The Head-Butt (Hitting from below)
-       * 2. The Right Wall (Hitting while moving right)
-       * 3. The Left Wall (Hitting while moving left)
+       * 1. Floor: Provided below.
+       * 2. Head-Butt: If vY < 0 and player is below the block.
+       * 3. Ghost Walls: Stop Yoshi, but allow his head to overlap the bottom of blocks.
        */
 
       // --- PART A: THE FLOOR (Given) ---
       if (player.vY > 0 && player.y + player.h < p.y + 20) {
-        player.y = p.y - player.h;
+        player.y = p.y - player.h - 0.1;
         player.vY = 0;
         player.grounded = true;
       }
 
       // --- PART B: THE HEAD-BUTT (Your Turn!) ---
-      // Hint: If player.vY < 0 and player.y is below the platform top...
       if (player.vY < 0 && player.y > p.y) {
-        // TODO: Bounce Yoshi down and remove 'item' blocks using splice
+        // TODO: Bounce down (vY = 2) and delete [?] blocks (splice)
       }
       
-      // --- PART C: THE WALLS (Your Turn!) ---
-      // Hint: If player.vX > 0, set player.x = p.x - player.w
-      if (player.vX > 0 && player.x + player.w < p.x + 10) {
-        // TODO: Stop Yoshi from walking through bricks to the right
+      // --- PART C: GHOST WALLS (Your Turn!) ---
+      // Hint: Use 'player.y < p.y + tileSize - 15' to let his head pass through!
+      if (player.vX > 0 && player.x + player.w < p.x + 10 
+          && player.y + player.h > p.y + 5) { // Feet buffer
+        // TODO: Add the 'Ghost Head' check and stop Yoshi (vX = 0)
       } 
-      else if (player.vX < 0 && player.x > p.x + p.w - 10 && player.y + player.h > p.y + 5) {
-        // TODO: Stop Yoshi from walking through bricks to the left
+      else if (player.vX < 0 && player.x > p.x + p.w - 10 
+          && player.y + player.h > p.y + 5) {
+        // TODO: Add the 'Ghost Head' check and stop Yoshi (vX = 0)
       }
     }
   });
