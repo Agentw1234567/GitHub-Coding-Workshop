@@ -166,7 +166,7 @@ function update() {
         // TODO: Add the 'Ghost Head' check and stop Yoshi (vX = 0)
         if(player.y < p.y + tileSize - 15) {
           player.vX = 0;
-          player.x = p.x + player.w;
+          player.x = p.x - player.w;
         }
       } 
       else if (player.vX < 0 && player.x > p.x + p.w - 10 
@@ -174,7 +174,7 @@ function update() {
         // TODO: Add the 'Ghost Head' check and stop Yoshi (vX = 0)
         if(player.y < p.y + tileSize - 15) {
           player.vX = 0;
-          player.x = p.x - player.w;
+          player.x = p.x + player.w;
         }
       }
     }
