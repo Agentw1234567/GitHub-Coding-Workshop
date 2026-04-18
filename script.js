@@ -94,7 +94,7 @@ function loadLevel(idx) {
   document.getElementById('level-num').innerText = idx + 1;
   document.getElementById('score-num').innerText = score;
 
-  const map = levels[idx];
+ const map = levels[idx];
   map.forEach((row, r) => {
     row.forEach((type, c) => {
       let x = c * tileSize, y = r * tileSize + 240;
@@ -129,6 +129,8 @@ function update() {
    */
   if (player.y > canvas.height) {
     // TODO: Set player.dead and show overlay
+    player.dead = true;
+    document.getElementById('overlay').style.display = 'flex';
   }
 
   platforms.forEach((p, i) => {
