@@ -212,6 +212,10 @@ function update() {
    */
   goals.forEach(g => {
     // TODO: Collision check to advance levels
+    if(getCollision(player, g)){
+      currentLevel += 1;
+      loadLevel(currentLevel)
+    }
   });
 
   draw();
