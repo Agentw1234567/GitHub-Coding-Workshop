@@ -165,16 +165,16 @@ function update() {
           && player.y + player.h > p.y + 5) { // Feet buffer
         // TODO: Add the 'Ghost Head' check and stop Yoshi (vX = 0)
         if(player.y < p.y + tileSize - 15) {
-          player.vX = 0;
           player.x = p.x - player.w;
+          player.vX = 0;
         }
       } 
       else if (player.vX < 0 && player.x > p.x + p.w - 10 
           && player.y + player.h > p.y + 5) {
         // TODO: Add the 'Ghost Head' check and stop Yoshi (vX = 0)
         if(player.y < p.y + tileSize - 15) {
-          player.vX = 0;
           player.x = p.x + player.w;
+          player.vX = 0;
         }
       }
     }
@@ -194,6 +194,7 @@ function update() {
        * CHALLENGE 5: STOMP OR DIE
        */
       // TODO: Logic for falling on top of enemy vs hitting from the side
+      if(player.y )
     }
   });
 
