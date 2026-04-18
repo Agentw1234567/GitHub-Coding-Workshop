@@ -91,6 +91,8 @@ function loadLevel(idx) {
    * CHALLENGE 2: UI SYNCHRONIZATION
    * TODO: Update 'level-num' and 'score-num' in the HTML
    */
+  document.getElementById('level-num').innerText = idx + 1;
+  document.getElementById('score-num').innerText = score;
 
   const map = levels[idx];
   map.forEach((row, r) => {
